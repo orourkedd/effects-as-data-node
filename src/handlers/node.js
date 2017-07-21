@@ -7,7 +7,7 @@ function node(action) {
 function promisify(fn, ctx) {
   return function() {
     let args = [].slice.call(arguments)
-    return new Promise(resolve => {
+    return new Promise((resolve, reject) => {
       let done = function() {
         let doneArgs = [].slice.call(arguments)
         let error = doneArgs.shift()
