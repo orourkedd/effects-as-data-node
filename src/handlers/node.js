@@ -14,7 +14,7 @@ function promisify(fn, ctx) {
 
         if (error) return reject(error)
 
-        resolve(success(doneArgs[0], { args: doneArgs }))
+        resolve(doneArgs[0], { args: doneArgs })
       }
 
       args.push(done)
