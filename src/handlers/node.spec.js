@@ -5,14 +5,13 @@ const { join } = require('path')
 const fs = require('fs')
 const { tmpdir } = require('os')
 
-describe.skip('node.js', () => {
+describe('node.js', () => {
   describe('fs.readFile()', () => {
     it('should read from a file', () => {
       const filePath = join(__dirname, 'test-file.js')
       const action = cmds.readFile(filePath, { encoding: 'utf8' })
       const fileContents = fs.readFileSync(filePath, { encoding: 'utf8' })
-      const expected = success(fileContents)
-      expected.args = [fileContents]
+      const expected = fileContents
       return node(action).then(actual => {
         deepEqual(actual, expected)
       })
@@ -25,8 +24,7 @@ describe.skip('node.js', () => {
       //  wipe out file contents from previous run of test
       fs.writeFileSync(filePath, '', { encoding: 'utf8' })
       const action = cmds.writeFile(filePath, 'foobar', { encoding: 'utf8' })
-      const expected = success()
-      expected.args = []
+      const expected = null
       return node(action).then(actual => {
         deepEqual(actual, expected)
         const contents = fs.readFileSync(filePath, { encoding: 'utf8' })
