@@ -1,1 +1,1 @@
-# Effects as data universal commands
+# Effects as data node commands
