@@ -10,8 +10,8 @@
   "scripts": {
     "test": "jest",
     "test-mocha": "mocha src/**/*.spec.js --recursive --compilers js:babel-register --require babel-polyfill",
-    "transpile": "babel src --out-dir lib --source-maps",
-    "deploy": "npm run transpile && npm test && npm publish"
+    "transpile": "babel src --out-dir es5 --source-maps",
+    "deploy": "npm run transpile && npm test && npm publish && rm -rf es5"
   },
   "author": "orourkedd",
   "license": "MIT",
