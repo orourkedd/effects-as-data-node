@@ -1,11 +1,9 @@
-const { env } = require('./env')
-const { requireModule } = require('./require-module')
-const { readFile, writeFile } = require('./fs')
-const { prompt } = require('./prompt')
-const { cmds: universal } = require('effects-as-data-universal')
+const { env } = require("./env")
+const { requireModule } = require("./require-module")
+const { readFile, writeFile } = require("./fs")
+const { prompt } = require("./prompt")
 
 module.exports = {
-  ...universal,
   env,
   requireModule,
   readFile,
